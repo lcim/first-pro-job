@@ -1,0 +1,9 @@
+@use '../../scss/index' as *;
+
+.services__image{
+    margin: auto;
+    max-width: 580px;
+    max-width: 95%;
+    margin-block-end: $base_margin;
+    // padding-inline: $base_padding * 2;
+}

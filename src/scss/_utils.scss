@@ -1,0 +1,259 @@
+// colors
+$gray_100: rgba(243, 244, 246, 0.6);
+$gray_200: rgb(229, 231, 235);
+$sky_100: #e0f2fe;
+$sky_300: #7dd3fc;
+$sky_400: #38bdf8;
+$sky_700: #0369a1;
+$sky_800: #075985;
+$stone_600: #57534e;
+$indigo_600: #4f46e5;
+$indigo_900: #1a237e;
+$cyan_500: #06b6d4;
+$blue_500: #3b82f6;
+$orange_500: #f97316;
+$lime_300: #bef264;
+$red-500: #ef4444;
+$purple_400: #c084fc;
+$section_background: #e0e7ff;
+// text colors
+$text_yellow_50: #fefce8;
+$yellow_800: #82441b;
+$gray_800: #1f2937;
+$red_300: #ffab91;
+$red_800: #991b1b;
+$indigo_950: #1e1b4b;
+$yellow_950: #422006;
+
+// border radius
+$rounded_xs: 8px;
+$rounded_sm: 12px;
+$rounded_md: 21px;
+$rounded_lg: 33px;
+$rounded_xl: 44px;
+
+// base padding and margin
+$base_padding: 1rem;
+$base_margin: 1rem;
+$mini_margin: 0.5rem;
+$demarcation: 3rem;
+$xs_padding: $base_padding * 1.5;
+
+// font-weights bold
+$fontWeight: (
+  bold: 900,
+  semi_bold: 700,
+  normal: 500,
+  "less_normal": 400,
+);
+$bold_font: 900;
+$semi_bold_font: 700;
+$normal_font: 500;
+$under_normal_font: 400;
+
+// base height
+$nav_height: 5rem;
+
+// font-families
+$heading_font_fam: Roboto, serif;
+$body_font_fam: Montserrat;
+$body_font_fam2: Inter, serif;
+
+// font-sizes
+$sub_heading_font_size: 1.6rem;
+$heading_font_size: 2.2rem;
+$body_font_size1: 1.2rem;
+$body_font_size2: 1.3rem;
+
+$fontSizes: (
+  under_normal4: 0.4rem,
+  under_normal5: 0.5rem,
+  under_normal6: 0.6rem,
+  under_normal7: 0.7rem,
+  under_normal8: 0.8rem,
+  under_normal9: 0.9rem,
+  normal: 1rem,
+  normal1: 1.1rem,
+  normal2: 1.2rem,
+  normal3: 1.3rem,
+  normal4: 1.4rem,
+  medium: 1.5rem,
+  large: 3rem,
+  xl: 5rem,
+);
+// border
+@function defaultBorder($color: black, $width: 1px, $type: solid) {
+  $borderStyle: $color $width $type;
+  @return $borderStyle;
+}
+
+// Navbar colors
+$navbar_background: linear-gradient(to right, #7dd3fc 10%, #82bdcb, $blue_500);
+
+$nav_box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0, 0, 0, 0.1),
+  0 8px 10px -6px rgb(0, 0, 0, 0.1);
+
+$xs_width: 94%; // below 300
+$sm_width: 92%; // 300 - 450
+$md_width: 80%; // 450 - 760
+$lg_width: 80%; //760
+$lg_width_grid: 90%; // 760
+$xl_width: 80%; //min 1200
+
+// standard heading
+@mixin heading1 {
+  font-family: Roboto, serif;
+  margin-inline: auto;
+  padding: $base_padding * 0.5;
+  text-align: center;
+  font-size: $heading_font_size;
+}
+// standard sub-heading
+@mixin sub_heading1 {
+  font-family: Roboto, serif;
+  font-size: $sub_heading_font_size;
+  margin-inline: auto;
+  margin-block-start: $demarcation;
+  padding: $base_padding * 0.5;
+  text-align: center;
+}
+@mixin sub_heading2 {
+  font-family: Roboto, serif;
+  margin-inline: auto;
+  text-align: center;
+  background-image: $body_background;
+  padding-inline-start: $base_margin;
+  font-size: $sub_heading_font_size;
+  margin-block: $demarcation 0;
+}
+
+// $standard body text
+@mixin body_text {
+  font-size: $body_font_size1;
+  font-family: $body_font_fam;
+  text-align: left;
+  padding-inline: $base_padding * 1.5;
+  margin-inline: auto;
+}
+
+// flex
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+@mixin flexy($direction: row) {
+  @include flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+}
+
+@mixin hovered {
+  font-size: map-get($map: $fontSizes, $key: medium) * 1.5;
+}
+
+// button
+@mixin btn($fontsize: 1rem) {
+  padding: 0.7rem;
+  font-size: $fontsize;
+  font-weight: $semi_bold_font;
+  border-radius: $rounded-sm;
+}
+
+// breakpoint
+@mixin breakpoint($bp: 300px) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+@mixin breakpoint_max($bp: 300px) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+$teal_accent_100: #ffcdd2;
+$light_blue_accent_100: #80d8ff;
+$blue_300: #64b5f6;
+$blue_400: #42a5f5;
+$cyan_300: #4dd0e1;
+
+// body background
+@mixin defaultGradient($col1: $sky_100, $col2: $sky_400) {
+  background-image: linear-gradient(to right, $col1, $col2);
+}
+$body_background: linear-gradient(to right, $sky_700, $indigo_600);
+$body_background2: linear-gradient(to right, $sky_300, #818cf8, #60a5fa);
+$body_background3: linear-gradient(to bottom right, $sky_300, $sky_100);
+$body_background4: linear-gradient(
+  to bottom right,
+  $teal_accent_100,
+  $light_blue_accent_100
+);
+// $body_background: linear-gradient(to right, #e0f7fa, #eab308, #69f0ae);
+$about_background: linear-gradient(to right, #ecfccb 10%, #f4c392, #c3f492);
+
+$highlighted_background1: linear-gradient(to right, #e0f7fa, #eab308, #69f0ae);
+$highlighted_background2: linear-gradient(
+  to right,
+  #e0f7fa,
+  $sky_300,
+  $sky_700
+);
+
+// background
+@mixin gradient1(
+  $color1: $sky_400,
+  $color2: $orange_500,
+  $color3: $indigo_600
+) {
+  background-image: linear-gradient(to bottom right, $color1, $color2, $color3);
+}
+
+@mixin defaultGradient($col1: $sky_100, $col2: $sky_400) {
+  background-image: linear-gradient(to right, $col1, $col2);
+}
+// text clip
+@mixin textClip($color1, $color2, $color3) {
+  background: linear-gradient(to right, $color1, $color2, $color3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  // webkit-text-fill-color:$orange_500;
+  // background-color: #EF4444;
+}
+
+@mixin flexInGrid {
+  max-width: 90%;
+  margin-inline: auto;
+  @include flexy();
+  column-gap: $base_margin * 2;
+  align-items: stretch;
+  @include breakpoint(400px) {
+    max-width: 85%;
+  }
+  @include breakpoint(600px) {
+    max-width: 70%;
+  }
+  @include breakpoint(760px) {
+    max-width: 90%;
+  }
+  @include breakpoint(1024px) {
+    max-width: 80%;
+    column-gap: $base_margin * 3;
+  }
+}
+
+@mixin one_column_grid {
+  @include breakpoint(760px) {
+    max-width: 45%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+@mixin grid_heading {
+  background-image: $highlighted_background1;
+  padding-inline-start: $base_padding;
+  font-size: $sub_heading_font_size;
+}

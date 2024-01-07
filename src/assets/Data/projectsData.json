@@ -1,0 +1,55 @@
+[
+    {
+        "projectName": "Geregu gas plant Phase ii",
+        "projectDescription":
+            "Construction of 173 meter cube cylindrical vertical tank, 2 off and piping fabrication." ,
+        "client": "Siemens Nig. Ltd.",
+        "location": "Ajaokuta Kogi State Nigeria"
+    },    
+    {
+        "projectName": "Azura Project",
+        "projectDescription":
+            "Blasting and painting of all the structural and piping work." ,
+        "client": "Siemens Nig. Ltd.",
+        "location": "Benin, Edo State."
+    },    
+    {
+        "projectName": "Egina1 ",
+        "projectDescription":
+            "Fabrication/Installation of Warehouse/Workshop." ,
+        "client": "FMC Subsea Nig Limited",
+        "location": "Port-Harcourt"
+    },    
+    {
+        "projectName": "Egina2 ",
+        "projectDescription":
+            "Construction of fire escape stair case." ,
+        "client": "FMC Subsea Nig Ltd",
+        "location": "Lagos"
+    },    
+    {
+        "projectName": "13.462km Okpoho Okono 16’’ pipeline replacement.",
+        "projectDescription":
+            "Provision of National Technical manpower" ,
+        "client": "NPDC",
+        "location": "Offshore"
+    },    
+    {
+        "projectName": "pipeline replacement.",
+        "projectDescription":
+            "Provision of National Technical Manpower" ,
+        "client": "JC International Ltd.",
+        "location": "Port-Harcourt"
+    },    
+    {
+        "projectName": "Welder Training and qualification",
+        "projectDescription":
+            "Welder Training and qualification" ,
+        "client": "Saipem Nig Ltd",
+        "location": "Port-Harcourt"
+    }    
+]
+
+
+
+

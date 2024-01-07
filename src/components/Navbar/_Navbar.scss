@@ -1,0 +1,137 @@
+@use "../../scss/index" as *;
+// @use '../../scss/utils' as *;
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  .burger__menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    .bars,
+    .xclose {
+      background-color: $gray_100;
+      width: map-get($map: $fontSizes, $key: large) * 0.8;
+      height: map-get($map: $fontSizes, $key: large) * 0.8;
+      font-size: map-get($map: $fontSizes, $key: large) * 0.8;
+      text-align: center;
+      color: darken($sky_400, 35%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .xclose {
+      border-radius: $rounded-lg;
+      padding: $base_padding * 0.2;
+    }
+  }
+
+  .menu__container {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: $nav_height;
+    background-image: $navbar_background;
+    padding-inline: $base_padding;
+    box-shadow: 0 10px 10px 1px #bae6fd;
+  }
+
+  // the logo section
+  .logo {
+    @include flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .company__name {
+    margin-block: 0;
+    color: #075985;
+    font-weight: map-get($map: $fontWeight, $key: bold);
+  }
+  .logo__img {
+    width: 52px;
+    height: 52px;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+
+  // NPM rc-menu style modification
+  .nav__menu {
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: $navbar_background;
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    // position: absolute;
+    // left: $base_margin * 3;
+    // top: $base_margin * 0.2;
+    // align-self: center;
+  }
+
+  ul.rc-menu {
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include breakpoint_max(330px) {
+    .rc-menu-horizontal > .rc-menu-submenu > .rc-menu-submenu-title {
+      transform: translateX(42px);
+      z-index: 748;
+    }
+  }
+
+  ul.rc-menu-overflow {
+    color: $text_yellow_50;
+    align-items: center;
+    justify-content: center;
+    font-size: map-get($map: $fontSizes, $key: normal2);
+  }
+
+  li.rc-menu-overflow-item a,
+  li.rc-menu-submenu {
+    color: $text_yellow_50;
+    color: #312e81;
+    font-weight: map-get($map: $fontWeight, $key: semi_bold);
+  }
+
+  //  li.rc-menu-overflow-item > .rc-menu-item {
+  //   background-color: blue($color: #000000)
+  //  }
+  // li.rc-menu-submenu.rc-menu-item {
+  //   // width: 120px;
+  //   background-color: brown;
+  //   color: brown;
+  //   }
+
+  li.rc-menu-overflow-item a:hover,
+  li.rc-menu-item a:hover,
+  li.rc-menu-submenu:hover {
+    color: #ff4938;
+  }
+
+  li.rc-menu-item-selected {
+    background-color: #38bdf8;
+    border-radius: $rounded-xs;
+  }
+
+  li.rc-menu-item a,
+  li.rc-menu-submenu a {
+    text-decoration: none;
+  }
+
+  li.rc-menu-item-selected a {
+    color: $text_yellow_50;
+  }
+}

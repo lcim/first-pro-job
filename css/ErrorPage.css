@@ -1,0 +1,15 @@
+.error__page {
+  margin-inline: auto;
+  background-color: #f97316;
+  color: #FCFCFC;
+  text-align: center;
+}
+
+.error__page a {
+  color: #1bd753;
+}
+
+.error__page a:hover {
+  color: #c53668;
+  font-size: 1.3rem;
+}/*# sourceMappingURL=ErrorPage.css.map */

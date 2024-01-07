@@ -1,0 +1,143 @@
+@use "../../scss/index" as *;
+
+// Overall page container
+.services__wrapper {
+  width: 100vw;
+  @include defaultGradient($sky_300, $cyan_300);
+  @include flexy(column);
+  // aside container
+  & .aside__wrapper {
+    display: none;
+  }
+  @include breakpoint(760px) {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: auto;
+      margin-inline: auto;
+    & .aside__wrapper {
+      height: 100%;
+      display: flex;
+      position: sticky;
+      top: 0;
+      background-color: rgba(100, 181, 246, 0.1);
+      // aside, aka inpage
+      & .in__page {
+        margin-inline-end: $base_padding * 2;
+        width: 210px;
+        position: sticky;
+        top: 0;
+        @include flexy(column);
+        font-size: $body_font_size1;
+        align-items: baseline;
+        padding: $base_padding * 4 $base_padding;
+        & p {
+          background-color: rgb(227, 247, 247);
+          width: 170px;
+          font-weight: $semi_bold_font;
+          padding-inline-start: $mini_margin;
+          padding-block: $mini_margin;
+          border-radius: $rounded_sm;
+          font-size: $body_font_size1 * 0.9;
+        }
+        & p:hover {
+          background-color: aqua;
+        }
+      }
+    }
+  }
+
+  // Our services container
+  .services {
+    @include flexy;
+    padding-inline: $xs_padding;
+    padding-block-end: $demarcation * 2;
+    & img {
+      width: 100%;
+      border-radius: 0 0 $rounded_sm * 3 $rounded_sm * 3;
+      margin-block-end: $base_padding;
+      padding-inline: $base_padding;
+    }
+    // Our Services page heading 
+    & .page__heading {
+      margin-block-start: $demarcation * 1.5;
+      @include heading1;
+      background-image: $highlighted_background1;
+    }
+    // brief introduction on Our Services
+    & .page__intro {
+      font-family: Roboto;
+      color: $gray_800;
+      font-size: $body_font_size1;
+      margin-block-end: $demarcation;
+      & .highlighted {
+        background-image: $highlighted_background1;
+      }
+    }
+    // container for individual EACH services components
+    & .services__type {
+      margin-inline: auto;
+      box-shadow: 0 0 15px 2px $sky_800;
+      border-radius: $rounded_sm;
+
+      // each individual service header
+      & .services__header {
+        @include sub_heading2;
+        @include defaultGradient($red_300);
+        margin-block-start: $demarcation * 1.8;
+        border-radius: $rounded_sm $rounded_sm 0 0;
+        padding-block: $base_padding;
+      }
+
+      // each individual service body containing list and Lottie image/video
+      & .services__body {
+        font-family: $body_font_fam;
+        font-weight: $normal_font;
+        line-height: 1.5rem;
+        @include flexy(column);
+        & .services__list {
+          margin-bottom: 0;
+        }
+        & .services__image {
+          margin-top: auto;
+        }
+      }
+    }
+    @include breakpoint(1024px) {
+      flex-direction: row;
+    letter-spacing: $mini_margin * 0.1;
+    line-height: $base_margin * 1.5;
+    }
+    // a wrapper/container for ALL individual components at extra-large screens
+    & .services__components {
+      @include breakpoint(1024px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: $base_padding * 3;
+        align-content: stretch;
+        color: $yellow_950;
+        & .services__type {
+          max-height: 750px;
+          @include flexy(column);
+          & .services__header {
+            margin-block-start: 0;
+            width: 100%;
+          }
+          & .services__body {
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+    &:last-child .services__type {
+      padding: $base_padding;
+      & .services__heading {
+        @include defaultGradient($red_300);
+        width: 100%;
+        text-align: center;
+        padding: $base_padding;
+        margin-block-start: $mini_margin * 0.5;
+        border-radius: $rounded_sm $rounded_sm 0 0;
+      }
+    }
+  }
+}

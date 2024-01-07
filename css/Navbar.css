@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(177, 177, 207);
+  width: 100vw;
+  height: 5rem;
+}
+
+.logo__img {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(43, 177, 226);
+  border-radius: 50%;
+}
+
+.nav__menu {
+  width: 100vw;
+  background-color: aquamarine;
+}/*# sourceMappingURL=Navbar.css.map */

@@ -1,0 +1,73 @@
+[
+  {
+    "focusArea": "International Oil Companies",
+    "company": {
+      "comp1": "Exxon Mobil",
+      "comp2": "SNEPCO and SHELL",
+      "comp3": "Total",
+      "comp4": "Chevron",
+      "comp5": "AGIP",
+      "comp6": "NGC",
+      "comp7": "NPDC"
+    }
+  },
+  {
+    "focusArea": "Marginal Field Operators and medium size IOC",
+    "company": {
+      "comp1": "Addax Petroleum Limited",
+      "comp2": "Pan Ocean",
+      "comp3": "FMC Technologies"
+    }
+  },
+  {
+    "focusArea": "Dedicated Engineering Companies",
+    "company": {
+      "comp1": "Pivot Engineering",
+      "comp2": "Dover Engineering Company",
+      "comp3": "Spectrum Oil and Gas Nig Ltd"
+    }
+  },
+  {
+    "focusArea": "Fabrication Companies",
+    "company": {
+      "comp1": "Dorman Long Amalgamated Nig Ltd",
+      "comp2": "Niger Dock",
+      "comp3": "Aveon Offshore"
+    }
+  },
+  {
+    "focusArea": "Petroleum marketing companies",
+    "company": {
+      "comp1": "Dorman Long Amalgamated Nig Ltd",
+      "comp2": "Niger Dock",
+      "comp3": "Aveon Offshore"
+    }
+  },
+  {
+    "focusArea": "LNG Companies",
+    "company": {
+      "comp1": "Brass",
+      "comp2": "NLNG"
+    }
+  },
+  {
+    "focusArea": "Cement Industry",
+    "company": {
+      "comp1": "Dangote Group- Obajana",
+      "comp2": "WAPCO- Ewekoro and Shagamu",
+      "comp3": "Flour Mills - Apapa"
+    }
+  },
+  {
+    "focusArea": "We have registered and provided services to",
+    "company": {
+      "comp1": "TOTAL- Registration completed",
+      "comp2": "CHEVRON- Registration completed",
+      "comp3": "MOBIL- Registration completed",
+      "comp4": "ADAX- Registration in completed",
+      "comp5": "OANDO- Registration completed",
+      "comp6": "SEAWOLF- Registration completed",
+      "comp7": "AGIP- Registration completed"
+    }
+  }
+]

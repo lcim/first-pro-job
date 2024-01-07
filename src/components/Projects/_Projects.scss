@@ -1,0 +1,64 @@
+@use "../../scss/index" as *;
+
+// main projects container
+.projects__wrapper {
+  @include breakpoint(992px) {
+    letter-spacing: $mini_margin * 0.15;
+    line-height: $base_margin * 1.5;
+  }
+  @include flexy(column);
+  width: 100vw;
+  height: auto;
+  margin-inline: auto;
+  padding-inline: $base_padding;
+  padding-block-end: $base_margin * 4;
+  background-image: $body_background2;
+
+  // projects heading/title
+  & .projects__heading {
+    @include heading1;
+    max-width: $xs_width;
+    @include grid_heading;
+    margin-block-start: $demarcation * 1.5;
+  }
+
+  // brief page intro - a sub-heading
+  & .projects__sub_heading {
+    @include sub_heading1;
+    max-width: $xs_width;
+  }
+
+  // tables
+  & .tables {@include flexInGrid;
+    max-width: $xs_width;
+    overflow-x: auto;
+    & .table1, .table2 {
+      font-family: $heading_font_fam;
+      & .table1__title, .table2__title {
+        font-size: $body_font_size1 * 0.8;
+        font-style: italic;
+        font-weight: $semi_bold_font;
+        text-align: center;
+      }
+      & table {
+        border-collapse: collapse;
+        margin: $base_margin;
+        border: 2px solid ;
+        background-image: $body_background4;
+        th, td {
+            border: 2px solid #232323;
+            padding: $base_padding * 0.7;
+        }
+        th{
+          border: 2px solid ;
+        }
+      }
+    }
+    & .table2 table{
+        background-image: $body_background3;
+    }
+    & .table2 .table2__title {
+      margin-block-start: $demarcation * 1.5;
+    }
+  }
+}

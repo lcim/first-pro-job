@@ -1,0 +1,63 @@
+[
+    {
+       "projectName": "2 numbers LPG Sphere tank",
+        "projectDescription":
+            "Carried out MT, PT and RT." ,
+        "client": "Cakasa Nig. Ltd",
+        "location": "Apapa NAVGAS Lagos"
+    },    
+    {
+        "projectName": "NNPC/PPMC TNAK 15/16",
+        "projectDescription":
+            "Integrity Inspection" ,
+        "client": "ZAKHEM",
+        "location": "Mosimi Depot Lagos"
+    },    
+    {
+        "projectName": "Construction and Installation of Calm buoy and Piles",
+        "projectDescription":
+            "Carried out RT, PT and MT." ,
+        "client": "SBM",
+        "location": "Snake Island Lagos"
+    },    
+    {
+        "projectName": "3 numbers LPG Sphere tank/Piping.",
+        "projectDescription":
+            "Carried out RT, PT and MT" ,
+        "client": "NIVAFER",
+        "location": "Apapa NIPCO yard Lagos"
+    },    
+    {
+        "projectName": "EGP3A FB, EGP3A FJ, EGP3A FG, EGP3A UB, EGP3A OJ, EGP3A MG.    (CHEVRON)",
+        "projectDescription":
+            "Carried out RT, PT and MT" ,
+        "client": "Niger Dock Nig Ltd",
+        "location": "Snake Island Lagos"
+    },    
+    {
+        "projectName": "Integrity Inspection of Storage tank.",
+        "projectDescription":
+            "Integrity Inspection" ,
+        "client": "NEGRIS Nig Ltd",
+        "location": "Lagos"
+    },    
+    {
+        "projectName": "LRPF 11 Storage Tanks (FOLAWIYAN)",
+        "projectDescription":
+            "Carried out RT, PT and MT" ,
+        "client": "NIVAFER",
+        "location": "Greek Road Apapa, Lagos"
+    },    
+    {
+        "projectName": "Construction of Bonga Buoy and Piles",
+        "projectDescription":
+            "Inspection/Testing" ,
+        "client": "SNEPCO",
+        "location": "Snake Island Lagos"
+    }
+    
+]
+
+
+
+

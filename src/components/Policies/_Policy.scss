@@ -1,0 +1,67 @@
+@use '../../scss/index' as *;
+// page container
+.policies__wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  @include defaultGradient($red_300);
+  
+  // page heading
+  & .company__policies {
+    @include heading1;
+    margin-block-start: 0;
+    padding-block-start:$demarcation;
+    @include defaultGradient($purple_400, $lime_300);
+    width: 100%
+  }
+
+  // brief intro
+  & .policies__intro {
+    @include sub_heading1;
+    
+  }
+
+  // imported component policy files and page heading
+  & .policies, .policy__heading {
+    @include sub_heading1;
+    @include flexy(column); //defaultGradient($purple_400, $lime_300);
+    text-align: left;
+    margin-inline: auto;
+    max-width: 94%;
+    @include breakpoint(500px){max-width: 80%;}
+    padding-inline: $base_padding * 1.5;
+    padding-block-end: $demarcation;
+  }
+
+  // imported component policy files
+  & .policies {
+    box-shadow: 0 0 6px 2px ;
+    row-gap: $base_padding * 4;
+    margin-bottom: $demarcation * 2;
+    & .policy__wrapper {
+      border: 1px solid;
+      box-shadow: 0 0 6px 2px $indigo_950;
+      padding: $mini_margin;
+      margin-block: $base_padding;
+    }
+
+    // typerwriter component in the various policy components
+    & .Typewriter__wrapper {
+      color: $indigo_950;
+      background-image: $body_background2;
+      padding: $mini_margin;
+      color: $text_yellow_50;
+    }
+  }
+  @include breakpoint(760px){
+    & .policies {
+      max-width: 70%;
+    }
+  }
+}
+
+
+
+
+
+

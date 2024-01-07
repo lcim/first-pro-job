@@ -1,0 +1,78 @@
+@use "../../scss/index" as *;
+
+// main homepage container
+.home__container {
+  background-image: $body_background2;
+  padding-bottom: $base_padding * 3;
+  margin-inline: auto;
+  @include flexy();
+  .intro {
+    display: flex;
+    flex-flow: column nowrap;
+    
+    // page main title
+    & .title {
+      @include heading1;
+      color: transparent;
+      background-image: linear-gradient(to right, $indigo_950, $red_800, $text_yellow_50);
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-size: map-get($map: $fontSizes, $key: large) * 0.7;
+      @include breakpoint(600px) {
+        font-size: map-get($map: $fontSizes, $key: large) * 0.9;
+      }
+      @include breakpoint(760px) {
+        padding-inline-start: $base_padding * 3;
+      }
+    }
+
+    // homepage details
+    & .intro__section {
+      margin-inline: auto;
+      @include flexy();
+      align-items: unset;
+      padding: $base_padding * 1.5;
+      line-height: $body_font_size2 * 1.5;
+      letter-spacing: $mini_margin * 0.15;
+      font-size: $body_font_size1;
+      color: #000;
+      @include breakpoint(600px) {
+        padding-inline: $base_padding * 6;
+        font-size: map-get($map: $fontSizes, $key: normal3);
+        max-width: 700px;
+      }
+      @include breakpoint(992px) {
+        max-width: 100vw;
+        column-gap: $base_margin * 5;
+        padding: unset;
+        max-width: 1024px;
+      }
+
+      // homepage body/details
+      .brief {
+        margin-block: $demarcation;
+        padding: $base_padding;
+        @include breakpoint(1024px) {
+          width: 400px;
+          min-height: 200px;
+        }
+        box-shadow: 0 9px 6px 1px #7dd3fc;
+      }
+    }
+  }
+  // buttons
+  .btn-text,
+  .btn,
+  .btn__black {
+    text-align: center;
+  }
+
+  // highlight texts and button
+  .highlighted,
+  .head__btns {
+    font-weight: map-get($map: $fontWeight, $key: semi_bold);
+    background-image: $highlighted_background1;
+    border-radius: $rounded-xs;
+    padding: $base_padding * 0.2;
+  }
+}

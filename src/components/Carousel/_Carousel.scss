@@ -1,0 +1,21 @@
+@use '../../scss/index' as *;
+
+
+//  carousel for homepage
+.carousel__container{
+  width: 100vw;
+  & .slider-wrapper{
+    max-height: auto;
+  }
+}
+// carousel container for the about page
+.about__carousel-container {
+  font-size: map-get($map: $fontSizes, $key: medium);
+  color: $indigo_600;
+  font-weight: map-get($map: $fontWeight, $key: semi_bold );
+  @include defaultGradient();
+  max-width: 750px; 
+  max-height: 200px;
+  border-radius: $rounded-md;
+  padding-inline: $mini_margin;
+} 

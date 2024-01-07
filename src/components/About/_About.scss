@@ -1,0 +1,247 @@
+@use "../../scss/index" as *;
+
+// about page container
+.about__wrapper {
+  display: grid;
+  grid-template-columns: minmax(270px, 1fr);
+  grid-template-rows: auto;
+  margin-inline: auto;
+  grid-template-areas:
+    "inpage"
+    "title"
+    "sub_heading"
+    "mission_vision"
+    "expertize"
+    "focus"
+    "clients";
+  @include gradient1(#38bdf8, #fecaca, #60a5fa);
+  letter-spacing: $mini_margin * 0.1;
+  line-height: $base_margin * 1.5;
+
+  // make inpage menu sticky
+  .stick {
+    grid-area: inpage;
+    position: sticky;
+    left: 0;
+    top: 0;
+    margin-bottom: $base_margin * 0.8;
+    z-index: 100;
+
+    // burger menu icons
+    .burger__menu, .xclose {
+      position: absolute;
+      top: $base_margin * 0.5;
+      right: $base_margin * 0.5;
+      color: $red_500;
+      font-weight: map-get($map: $fontWeight, $key: semi_bold);
+      font-size: map-get($map: $fontSizes, $key: large) * 0.6;
+      cursor: pointer;
+      &:hover {
+        @include hovered();
+      }
+    }
+  }
+
+  // hide inpage menu
+  & .hidden {
+    display: none;
+  }
+  // style inpage menu items within the sticky component
+  & .in__page {
+    @include flexy(column);
+    width: 95vw;
+    background-color: rgba(186 230 253 / 0.9);
+    padding-inline: $base_padding;
+    align-items: baseline;
+    @include breakpoint(500px) {
+      width: 200px;
+    }
+    // style inpage menu item's links
+    & a {
+      text-decoration: none;
+      padding: $base_padding;
+      font-size: map-get($map: $fontSizes, $key: normal2);
+      &:hover {
+        @include textClip(#1d4ed8, #991b1b 40%, #fb923c);
+        font-weight: map-get($map: $fontWeight, $key: bold);
+        box-shadow: 0 6px 4px 1px $indigo_600;
+      }
+    }
+  }
+
+  // About page heading
+  & .about__heading {
+    grid-area: title;
+    margin-top: 20px;
+    font-size: $heading_font_size;
+    @include heading1;
+    line-height: $base_margin * 2.5;
+  }
+
+  // carousel showcasing main activities
+  .about__sub_heading {
+    line-height: $base_margin * 2;
+    grid-area: sub_heading;
+    padding-inline: 10%;
+    padding-block: 0;
+    height: auto;
+    @include breakpoint(600px) {
+      margin-inline: auto;
+      max-width: 70%;
+    }
+  }
+
+  // container containing both vision and mission statements
+  .mission__and__vision {
+    grid-area: mission_vision;
+    @include flexInGrid;
+    // mission and vision sections
+    & .vision,
+    & .mission {
+      @include one_column_grid;
+    }
+
+    // headings for mission and vision components
+    .mission__heading,
+    .vision__heading {
+      @include grid_heading;
+      margin-block: $base_margin * 3.5 $base_margin;
+      padding-block: $base_padding * 0.5;
+    }
+
+    // images for both mission and vision components
+    & .mission .mission__image,
+    & .vision .vision__image {
+      width: 100%;
+      height: auto;
+      border-radius: $rounded-xs;
+      grid-row: 2/3;
+    }
+
+    // body for both mission and vision components
+    & .mission .sub_mission,
+    & .vision .sub_vision {
+      width: 100%;
+      font-size: $body_font_size1 * 0.93;
+      margin-block: $mini_margin * 1.5;
+      font-family: $body_font_fam;
+      @include breakpoint(760px) {
+        max-height: 350px;
+        aspect-ratio: 1/1;
+      }
+      @include breakpoint(1024px) {
+        max-height: 250px;
+      }
+    }
+    & .vision .sub_vision {
+      overflow-y: auto;
+    }
+  }
+
+  // styling Expertize and clients components
+  .expertize__clients {
+    // the main container
+    grid-area: expertize;
+    @include flexInGrid;
+    margin-top: $base_margin * 3;
+
+    // The two component containers
+    & .clients__container,
+    & .services__type {
+      @include one_column_grid;
+    }
+    // each component heading
+    & .clients__heading,
+    & .services__heading {
+      @include grid_heading;
+      margin-block: $base_margin * 4.5 0;
+      @include sub_heading1;
+      margin-inline: 0;
+      @include breakpoint(760px) {
+        text-align: left;
+      }
+    }
+    // each component main details
+    & .expertize__intro,
+    & .clients__intro {
+      font-family: $body_font_fam;
+    }
+    & .clients__intro {
+      padding-bottom: 2rem;
+    }
+    // each component's list items
+    & .expertize__list,
+    & .clients__list {
+      font-family: $body_font_fam;
+    }
+  }
+
+  // Company Focus page container
+  .focus__container {
+    grid-area: focus;
+    max-width: 92%;
+    margin-block-end: $base_margin * 4;
+    @include flexInGrid;
+    @include breakpoint(760px) {
+      max-width: 90%;
+    }
+    margin-inline: auto;
+    // @include flexy(column);
+
+    // page heading
+    & .focus__heading {
+      @include sub_heading1;
+      @include grid_heading;
+      padding-block: $base_padding;
+      @include breakpoint(760px) {
+        width: 94%;
+      }
+    }
+
+    // heading for unordered list of activities
+    & .focus__ul_head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto;
+      gap: $base_margin * 2;
+      width: 94%;
+      font-family: $body_font_fam;
+      @include breakpoint(760px) {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+      @include breakpoint(1200px) {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      }
+      // unordered list of activities
+      & .focus__ul {
+        list-style-type: none;
+        padding-inline: 0;
+        box-shadow: 0 6px 4px 1px $yellow_800;
+        & .focus__header {
+          font-family: Roboto, serif;
+        margin-block-start: 0;
+        text-align: center;padding-block: $base_padding;
+        border-radius: $rounded_sm $rounded_sm 0 0;
+        padding-inline: $base_padding * 0.8;
+          background-image: linear-gradient(
+            to right,
+            #d9f99d,
+            #e2e8f0,
+            #99f6e4
+          );
+        }
+        &:hover {
+          box-shadow: 0 12px 10px 2px $orange_500;
+        }
+        & .focus__list li {
+          padding-bottom: $base_padding * 0.9;
+          margin-inline-start: $base_padding;
+        }
+        & .focus__list li:last-child {
+          padding-bottom: $base_padding * 2;
+        }
+      }
+    }
+  }
+}
