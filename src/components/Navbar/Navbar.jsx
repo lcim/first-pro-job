@@ -41,7 +41,7 @@ const Navbar = () => {
       >
         {/* nav links here */}
         <MenuItem title="home" key="0-2">
-          <Link className="return__home" to="/">
+          <Link className="return__home" to="/first-pro-job/">
             Home
           </Link>
         </MenuItem>

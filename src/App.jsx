@@ -27,7 +27,7 @@ const App = () => {
         <Routes>
           {/* One can use "Component" or 'element' making necessary name adjustments */}
           
-          <Route path="/" Component={Home} />
+          <Route path="/first-pro-job/" Component={Home} />
           {/* <Route index Component={Home} /> */}
           <Route path="about" Component={About} />
           <Route path="projects" Component={Projects} />
