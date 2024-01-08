@@ -29,12 +29,27 @@
   }
 
   // tables
-  & .tables {@include flexInGrid;
-    max-width: $xs_width;
+  & .tables {
+    @include flexInGrid;
+    // max-width: $xs_width;
     overflow-x: auto;
-    & .table1, .table2 {
+    @include breakpoint(0) {
+      max-width: 100%;
+      overflow: auto;
+      margin-inline-start: 0;
+      padding-inline-start: 0;
+    }
+    @include breakpoint(1024px) {
+      max-width: 80%;
+    }
+    @include breakpoint(1300px) {
+      max-width: 1200px;
+    }
+    & .table1,
+    .table2 {
       font-family: $heading_font_fam;
-      & .table1__title, .table2__title {
+      & .table1__title,
+      .table2__title {
         font-size: $body_font_size1 * 0.8;
         font-style: italic;
         font-weight: $semi_bold_font;
@@ -43,22 +58,71 @@
       & table {
         border-collapse: collapse;
         margin: $base_margin;
-        border: 2px solid ;
+        border: 2px solid;
         background-image: $body_background4;
-        th, td {
-            border: 2px solid #232323;
-            padding: $base_padding * 0.7;
+        th,
+        td {
+          border: 2px solid #232323;
+          padding: $base_padding * 0.7;
         }
-        th{
-          border: 2px solid ;
+        th {
+          border: 2px solid;
         }
       }
     }
-    & .table2 table{
-        background-image: $body_background3;
+    & .table2 table {
+      background-image: $body_background3;
     }
     & .table2 .table2__title {
       margin-block-start: $demarcation * 1.5;
     }
   }
 }
+
+.mini__table {
+  border: 2px solid;
+    background-color: $sky_300;
+  @include flexy(column);
+  font-size: $body_font_size1;
+  padding-inline: $base_padding;
+  & .projects__sm_wrapper {
+    margin-block: $base_margin;
+    box-shadow: 0 0 6px 2px $indigo_600;
+    width: 100%;
+    margin-inline: auto;
+  }
+  & .project__item {
+    margin: $base_margin;
+    justify-content: flex-start;
+    & .column1 {
+      padding-inline-end: $base_padding;
+      font-weight: $semi_bold_font;
+      margin-right: auto;
+    }
+    & .project__description {
+      font-family: Montserrat;
+    }
+  }
+  hr {
+    color: #FA3333;
+  }
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+}
+// @include breakpoint(600px) {
+//   .mini__table {
+//     display: none;
+//   }
+// }
+
+// @include breakpoint_max(599px) {
+//   .projects__wrapper {
+//     display: none;
+//   }
+//   .mini__table {
+//     display: flex;
+//     background-color: #232323;
+//   }
+// }

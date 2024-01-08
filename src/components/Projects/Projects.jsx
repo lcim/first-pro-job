@@ -1,13 +1,23 @@
+import { useState, useEffect } from "react";
 import Table1 from "./Table1";
 import Table2 from "./Table2";
+import Table1OnSmallDevices from "./Table1OnSmallDevices";
+import Table2OnSmallDevices from "./Table2OnSmallDevices";
 import "./_Projects.scss";
 
-// import locationData from "./public/data.json" assert { type: "json" };
-// import { projectsData2 } from "../../assets/Data/projectsData";
 // import FooterLink from "../FooterLink/FooterLink";
 // import React from 'react'
 
 const Projects = () => {
+  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
+  const breakpoint = 600;
+
+  useEffect(() => {
+    const setWindowSize = () => (setDeviceWidth(window.innerWidth));
+    document.addEventListener("resize", setWindowSize);
+
+    return () => document.removeEventListener("resize", setWindowSize);
+  }, []);
   return (
     <div className="projects__wrapper">
       {/* main heading */}
@@ -22,13 +32,13 @@ const Projects = () => {
           <p className="table1__title">
             Table 1: Construction & Inspection/Maintenance Services
           </p>
-          {/* render table1 */}
-          <Table1 />
+          {/* render either of table1 for large or small devices */}
+          {deviceWidth < breakpoint ? <Table1OnSmallDevices /> : <Table1 />}        
         </div>
         <div className="table2">
           <p className="table2__title">Table2: NDT Services</p>
-          {/* render table2 */}
-          <Table2 />
+          {/* render either of table1 for large or small devices */}
+          {deviceWidth < breakpoint ? <Table2OnSmallDevices /> : <Table2 />}
         </div>
       </div>
     </div>

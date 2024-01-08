@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: 1fr 9fr;
     grid-template-rows: auto;
-      margin-inline: auto;
+    margin-inline: auto;
     & .aside__wrapper {
       height: 100%;
       display: flex;
@@ -57,7 +57,7 @@
       margin-block-end: $base_padding;
       padding-inline: $base_padding;
     }
-    // Our Services page heading 
+    // Our Services page heading
     & .page__heading {
       margin-block-start: $demarcation * 1.5;
       @include heading1;
@@ -78,12 +78,13 @@
       margin-inline: auto;
       box-shadow: 0 0 15px 2px $sky_800;
       border-radius: $rounded_sm;
+      margin-block-end: $base_margin * 2.5;
 
       // each individual service header
       & .services__header {
         @include sub_heading2;
         @include defaultGradient($red_300);
-        margin-block-start: $demarcation * 1.8;
+        margin-block-start: 0;
         border-radius: $rounded_sm $rounded_sm 0 0;
         padding-block: $base_padding;
       }
@@ -99,13 +100,14 @@
         }
         & .services__image {
           margin-top: auto;
+          padding-inline: 0;
         }
       }
     }
     @include breakpoint(1024px) {
       flex-direction: row;
-    letter-spacing: $mini_margin * 0.1;
-    line-height: $base_margin * 1.5;
+      letter-spacing: $mini_margin * 0.1;
+      line-height: $base_margin * 1.5;
     }
     // a wrapper/container for ALL individual components at extra-large screens
     & .services__components {
@@ -129,7 +131,7 @@
       }
     }
     &:last-child .services__type {
-      padding: $base_padding;
+      // padding: $base_padding;
       & .services__heading {
         @include defaultGradient($red_300);
         width: 100%;
