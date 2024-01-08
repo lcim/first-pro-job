@@ -29,10 +29,10 @@ const App = () => {
           
           <Route path="/first-pro-job/" Component={Home} />
           {/* <Route index Component={Home} /> */}
-          <Route path="first-pro-job/about" Component={About} />
-          <Route path="first-pro-job/projects" Component={Projects} />
-          <Route path="first-pro-job/services" element={<Services />} />
-          <Route path="first-pro-job/policies" element={<Policies />} />
+          <Route path="/first-pro-job/about" Component={About} />
+          <Route path="/first-pro-job/projects" Component={Projects} />
+          <Route path="/first-pro-job/services" element={<Services />} />
+          <Route path="/first-pro-job/policies" element={<Policies />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
     </div>
