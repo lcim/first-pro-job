@@ -17,7 +17,8 @@
   // projects heading/title
   & .projects__heading {
     @include heading1;
-    max-width: $xs_width;
+    width: 80%;
+    padding-block: $base_padding;
     @include grid_heading;
     margin-block-start: $demarcation * 1.5;
   }
@@ -31,14 +32,10 @@
   // tables
   & .tables {
     @include flexInGrid;
+    margin-inline: auto;
     // max-width: $xs_width;
     overflow-x: auto;
-    @include breakpoint(0) {
-      max-width: 100%;
-      overflow: auto;
-      margin-inline-start: 0;
-      padding-inline-start: 0;
-    }
+
     @include breakpoint(1024px) {
       max-width: 80%;
     }
@@ -106,23 +103,4 @@
   hr {
     color: #FA3333;
   }
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
 }
-// @include breakpoint(600px) {
-//   .mini__table {
-//     display: none;
-//   }
-// }
-
-// @include breakpoint_max(599px) {
-//   .projects__wrapper {
-//     display: none;
-//   }
-//   .mini__table {
-//     display: flex;
-//     background-color: #232323;
-//   }
-// }
